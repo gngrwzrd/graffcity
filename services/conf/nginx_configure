@@ -1,0 +1,23 @@
+#this is the configure statement I use to setup nginx. When
+#you first run nginx, you will get a bunch of permission / 
+#cannot mkdir errors. You'll need to create some of the
+below directories and set permissions.
+
+./configure \
+  --prefix=/usr \
+  --conf-path=/etc/nginx/nginx.conf \
+  --http-log-path=/var/log/nginx/access_log \
+  --error-log-path=/var/log/nginx/error_log \
+  --pid-path=/var/run/nginx.pid \
+  --http-client-body-temp-path=/var/tmp/nginx/client \
+  --http-proxy-temp-path=/var/tmp/nginx/proxy \
+  --http-fastcgi-temp-path=/var/tmp/nginx/fastcgi \
+  --with-md5-asm --with-md5=/usr/include \
+  --with-sha1-asm \
+  --with-sha1=/usr/include \
+  --with-http_realip_module \
+  --with-http_ssl_module \
+  --with-http_stub_status_module
+
+sudo make
+sudo make install

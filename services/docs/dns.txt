@@ -1,0 +1,36 @@
+
+## DEV TESTING ##
+* Use this for dev testing when changing around DNS doesn't matter.
+* Changing DNS for any dev.* names will not mess anything up that's
+* running live.
+dev.tornado.app.graffcityapp.com
+dev.fapws.app.graffcityapp.com
+
+## LIVE ##
+* These are the live DNS names. Once everything is up and running do
+* not change these.
+tornado.app.graffcityapp.com
+fapws.app.graffcityapp.com
+
+## SCALE TESTING ##
+* These are names used to trigger scale testing. The intentions are to
+* use these two names to point to a load balancer running the server
+* application. The server application will see these incoming host
+* names and switch it's connection to sclsql.graffcityapp.com.
+tornado.sclapp.graffcityapp.com
+fapws.sclapp.graffcityapp.com
+
+## SQL ##
+* This is the live sql host name.
+sql.graffcityapp.com
+* If the server application catches an incoming host name from the above
+* SCALE TESTING names, the application uses this as the connection host.
+* When scale testing is initiated this should point to whatever is used
+* to balance mysql clusters.
+sclsql.graffcityapp.com
+
+## STORAGE ##
+* This is the DNS name for storage. Once the app is live and running this
+* should point to whatever storage system is used. This should map to
+* the folder/container/bucket that holds the GRAFFCITY tag images.
+storage.graffcityapp.com

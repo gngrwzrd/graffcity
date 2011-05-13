@@ -1,0 +1,70 @@
+*services should accept and return json
+
+--REGISTER--
+ *parameters: {username:"", password:"", email:""}
+ *response json: {result:true} || {fault:true, faultMessage:"", faultCode:n}
+
+--UNREGISTER--
+ *clean up all join / lookup tables if needed. Remove images, etc.
+ *parameters: {username:"", password:""}
+ *response json: {result:true} || {fault:true, faultMessage:"", faultCode:n}
+
+--CHANGE PASSWORD--
+ *parameters: {username:"", password:"", newPassword,:""}
+ *response json: {result:true} || {fault:true, faultMessage:"", faultCode:n}
+
+--SET AVATAR--
+ *parameters: {username:"",password:"", avatar:[FILE]}
+ *the avatar photo will have to come in a typical multipart form upload
+ *response json: {result:true} || {fault:true, faultMessage:"", faultCode:n}
+
+--GET PROFILE INFO--
+ *parameters {username:""}
+ *response json: { result:true, data:{ totalTags:100, rating:4.3 } } || {fault:true, faultMessage:"", faultCode:n}
+
+--UPDATE PROFILE INFO--
+ ****
+
+--LIST TAGS BY USER--
+ *parameters: {username:"", offset:0, limit:25}
+ *this should be paged record sets
+ *returns all tags for a given user
+ *response json: { result:true, totalRows:100, data:[
+    {createdAt:"", thumbnailUrl:"", largeUrl:"", tagRating:4, latitude:"", longitude:"", orientation:"" },
+    {createdAt:"", thumbnailUrl:"", largeUrl:"", tagRating:4, latitude:"", longitude:"", orientation:"" },
+    {createdAt:"", thumbnailUrl:"", largeUrl:"", tagRating:4, latitude:"", longitude:"", orientation:"" },
+    ...
+  ]} || {fault:true, faultMessage:"", faultCode:n}
+
+--DELETE--
+ *parameters: {tagId:"",username:"",password:""}
+ *response json: {result:true} || {fault:true, faultMessage:"", faultCode:n}
+
+--SEARCH--
+ *should be paged record sets
+ *build the search so we can add in columns to search through. (initially only user will be searched, but we may want to add in other columns)
+ *parameters {query:"", offset:0, limit:25} 
+ *response json: {result:true, totalRows:100, data:[
+    {userId:1, username:"", email:"", avatarUrl:"", userRating:4, createdAt:"", thumbnailUrl:"", largeUrl:"", tagRating:3.4, latitude:"", longitude:"", orientation:"" },
+    {userId:1, username:"", email:"", avatarUrl:"", userRating:4, createdAt:"", thumbnailUrl:"", largeUrl:"", tagRating:3.4, latitude:"", longitude:"", orientation:"" },
+    {userId:1, username:"", email:"", avatarUrl:"", userRating:4, createdAt:"", thumbnailUrl:"", largeUrl:"", tagRating:3.4, latitude:"", longitude:"", orientation:"" },
+  ]} || {fault:true, faultMessage:"", faultCode:n}
+ 
+--RATE TAG--
+ *how do we do rating? do we have to keep track of every single rating that has every been applied to a tag, so we can average them?
+ *rating should be between 1-5
+ *parameters {tagId:1,rating:1.4}
+ *response json: {result:true} || {fault:true, faultMessage:"", faultCode:n}
+
+--PUBLISH--
+ *parameters {username:"",password:"",latitude:"",longitude:"",orientation:"",tagPhoto:[FILE]}
+ *the tag photo will have to come in a typical multipart form upload
+ *response json: {result:true} || {fault:true, faultMessage:"", faultCode:n}
+
+--NEARBY--
+ *parameters {latitude:"", longitude:"", orientation:"", limit:"", offset:""}
+ *response json: {result:true, totalRows:n, data:[
+    {userId:1, username:"", email:"", avatarUrl:"", userRating:4, created_at:"", thumbnailUrl:"", largeUrl:"", tagRating:3.4, latitude:"", longitude:"", orientation:"" },
+    {userId:1, username:"", email:"", avatarUrl:"", userRating:4, created_at:"", thumbnailUrl:"", largeUrl:"", tagRating:3.4, latitude:"", longitude:"", orientation:"" },
+    {userId:1, username:"", email:"", avatarUrl:"", userRating:4, created_at:"", thumbnailUrl:"", largeUrl:"", tagRating:3.4, latitude:"", longitude:"", orientation:"" },
+  ]} || {fault:true, faultMessage:"", faultCode:n}

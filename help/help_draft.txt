@@ -1,0 +1,52 @@
+TAG:
+
+- spraycan
+	- spray button: Click and hold the spray button and move around the phone to draw lines on your canvas.  Dragging your finger will set your start point to a different position on the canvas. You can use 2 finger pinch to zoom.
+	- camera button: This will take a snapshot of your drawing and what is currently in the camera for you to layout and send.
+	- tools button: Opens up tools to control your brush.
+		- brush: Pick a style of brush.
+		- brush options: Change the size of the brush, the drip length and toggle drips on and off.
+		- color: Select a color by moving your finger across the color pallet. Drag a color from the bar to the bottom squares to define swatches.
+	- sticker button: This will save your current drawing as a sticker that you can use in sticker mode later.
+	- undo button: This will let you undo the last stroke you did on your drawing.
+	- erase button: Erases your drawing.
+	- led view: Shows your current position on the canvas.
+
+- paint on canvas
+	- Move your fingers around the canvas to draw.
+	- move button: This will toggle between drawing and scrolling the canvas with your finger.  While scrolling you can use 2 finger pinch to zoom.
+	- camera button: This will take a snapshot of your drawing and what is currently in the camera for you to layout and send.
+	- tools button: Opens up tools to control your brush.
+		- brush: Pick a style of brush.
+		- brush options: Change the size of the brush, the drip length and toggle drips on and off.
+		- color: Select a color by moving your finger across the color pallet. Drag a color from the bar to the bottom squares to define swatches.
+	- sticker button: This will save your current drawing as a sticker that you can use in sticker mode later.
+	- undo button: This will let you undo the last stroke you did on your drawing.
+	- erase button: Erases your drawing.
+
+- sticker
+	- select a saved sticker to use for upload.
+	- camera button: This will take a snapshot of your sticker and what is currently in the camera for you to layout and send.
+	
+- tag layout
+	- Move, scale and rotate your tag and snapshot.  Use 1 finger to move and 2 fingers to scale and rotate.
+	- upload button: This will give you options for sharing your tag.  You can email it, save it to your photo library, save it to your profile or publish to facebook.
+	- blending button: This is a list of blending modes to use on your tag against the background image.
+	- move button: This will let you select between moving and scaling your tag or the photo.
+
+	
+EXPLORE:
+
+- nearby button: Shows a list of tags near your current location.
+- latest button: Shows a list of tags that have recently been added.
+- rating button: Shows the highest rated tags.
+- ar button: Shows the nearby tags in a 3D view.
+- search bar: Search for tags based on user or location.
+
+
+SETTINGS:
+
+- my profile: Shows your name, the number of tags you've created and your overall rating.
+- my gallery: Shows the tags you've created.
+- my account: Lets you login and logout of your account.
+

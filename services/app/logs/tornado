@@ -1,0 +1,9 @@
+WARNING:root:404 GET /favicon.ico (127.0.0.1) 0.34ms
+Traceback (most recent call last):
+  File "scripts/_tornado.py", line 66, in <module>
+    tornado.ioloop.IOLoop.instance().start()
+  File "/Library/Python/2.6/site-packages/tornado-0.2-py2.6.egg/tornado/ioloop.py", line 225, in start
+    event_pairs = self._impl.poll(poll_timeout)
+  File "/Library/Python/2.6/site-packages/tornado-0.2-py2.6.egg/tornado/ioloop.py", line 449, in poll
+    kevents = self._kqueue.control(None, 1000, timeout)
+KeyboardInterrupt

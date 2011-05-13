@@ -1,0 +1,119 @@
+iphone:
+
+- Tagging
+---- Generic
+-------- Drawing
+-------- Undo last stroke?
+-------- Brush selection
+-------- Clear canvas
+-------- Bitmap scrolling (will need this for different reasons on both views)
+-------- Picking color
+-------- Adding/saving swatches
+-------- Positioning, scaling and rotating
+-------- Saving: server, local to application (for stickering and keeping data attached without a connection) and in photo library.
+------------ We will need to decide how to deal with a user wanting to commit to having a profile and how to throw them to registration from here.  Most likely will require temp saving data.
+-------- Toggle drip (how is this handled on spray can version since accelerometer is being used?)
+-------- Getting geo coordinates and orientation (is orientation something that is feasible?)
+-------- Loading an image from camera and library (will need to determine based on scrolling if the apple api will work for this)
+-------- Add tags (should this be done by the original poster or or other users?)
+-------- Blend modes
+---- Finger drawing
+-------- Play with finger vs speed for thickness
+-------- Scrolling bitmap to make canvas wider
+---- Accelerometer input (video only available on 3GS)
+-------- Painting by accelerometer input
+-------- Determining canvas bounds and sending user feedback
+-------- Change UI for swatches, brushes and color picking
+---- Stickering
+-------- Make image a sticker
+-------- Load sticker
+-------- Scaling, rotating and positioning on top of image
+
+
+
+- Explore
+---- Search
+-------- Search by username
+-------- Search by geo data (address? zip?)
+-------- Search by rating
+-------- Search by tag
+---- View
+-------- View image
+-------- View next and previous image based on user location (basic navigation)
+-------- Rate image
+-------- View other image by user
+-------- Back to search or AR
+---- Augmented reality (only available on 3Gs)
+-------- Will need to decide if initial orientation is a factor here.
+-------- Find tags within geo range.  Might need a slider to adjust range.
+-------- Show tags in 3d space
+-------- Icons with username and rating.
+
+
+- Profile
+-------- Signup:  Requires email, username, password and an optional icon.
+-------- Icon: browsing, scaling positioning and upload.
+-------- Edit profile: Should be able to change any data except email.
+-------- User login (should this be in other places as well?)
+
+
+
+backend
+- user registration
+-------- Validate against users with same email or username
+- upload
+-------- Validate user, geo, orientation and image
+- search
+-------- By user
+-------- By geo with radius (if we roll this on our own we may need to tap into another service)
+-------- By rating
+- ratings
+-------- Will need to validate against user (and ip) to make sure user does not rate up their own stuff
+
+- services required (json xml or whatever)
+-------- search (with filter variables)
+-------- signup
+-------- upload
+-------- edit profile
+-------- remove pic
+-------- unsignup
+- tables
+-------- users (username, email, profile pic, password)
+-------- images *associated with user* (lat, long, image, orientation)
+-------- ratings *associated with image* (rating) *could perhaps be added to images*
+-------- tags *associated with image* (tag)
+
+qa:
+- We need to talk about this some as it will add time in to the end of the development cycle.  The app should be tested on a first generation phone as well as on 3GS.
+- I am going to assume that we will need to add in extra time for debugging service calls since we can't use any web proxy (that I know of) for seeing what's coming in and out.
+- QA should be really deep on this as once the thing is in the app store we really don't know how long apple will take to let us make simple updates.
+
+
+app store delivery:
+- We will need to manage expectations on deployment of this.  Apple has the final say for when this gets on the phone and a lot of the rejections they give can be vague.  The common timeline I have heard for this part is 6 weeks.
+
+
+
+
+
+
+questions:
+- Should we have prototypes of certain portions developed up front to get on the creative/sales folk's phones?  Might help us with the time we need to flush out the rest of this thing while giving them the key portions they need to show off.
+- How much extra info do we need associated with each image?  Right now I have user, geo, orientation, tags and rating.
+- Is it worth using flickr for this?  As I see it if we don't plan to expand upon it then really it's only a 4-5 table database with maybe 6-10 request/response services.  Flickr does offer us flexibility in expanding and also offers a built in way to group these and get stuff into search engines.  The issue is if we want to keep any sensitive user data it will have to reside on our own server
+- Is there anything we need to deal with as far as legal for having this stuff posted?
+- Are we concerned about obscenity?  If we are trying to approach a client about this thing they may be.
+- How much info about the user are we going to grab from them beyond name and email?
+- Have comments for the pics been brought up?  They seem like a given for most social media.
+- What are we thinking for not bugging people about signing up and using the app just to screw around offline?  Will we just restrict menus?  Is geo required?
+- Do we want to prepopulate the database with some nice looking stuff while we are waiting for submission?
+- Are tags important?  I can't see anyone entering anything besides their name and the name of their piece.
+
+
+
+
+
+
+
+
+

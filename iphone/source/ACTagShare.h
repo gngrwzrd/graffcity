@@ -1,0 +1,7 @@
+
+
+@interface ACTagShare : NSObject {
+	
+}
+
+@end

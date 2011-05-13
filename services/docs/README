@@ -1,0 +1,76 @@
+#HOST ENTRIES
+127.0.0.1 app.allcity.com         	#compiled in iphone
+127.0.0.1 s3.allcity.com          	#compiled in iphone
+127.0.0.1 sql.allcity.com
+127.0.0.1 sclsql.allcity.com      	#for scale testing
+127.0.0.1 sclapp.allcity.com      	#for scale testing
+127.0.0.1 tornado.app.allcity.com 	#for testing tornado specifically
+127.0.0.1 fapws.app.allcity.com   	#for testing fapws specifically
+
+#FINAL DNS
+s3.allcity.com						#Amazon S3
+tornado.app.allcity.com				#Writes
+tornado.sclapp.allcity.com			#Writes, points to Amazon EC2 cluster or load balancer, triggers scale testing and sql dns change to sclsql.allcity.com
+fapws.app.allcity.com				#Reads
+fapws.sclapp.allcity.com			#Reads, points to Amazon EC2 cluster or load balancer, triggers scale testing and sql dns change to sclsql.allcity.com
+sql.allcity.com						#Default SQL
+sclsql.allcity.com					#Scale testing SQL cluster.
+
+#DNS FOR TESTING ON MCNSF
+s3.mcnsf.com						#Amazon S3
+tornado.app.mcnsf.com				#Writes
+tornado.sclapp.mcnsf.com			#Writes, points to Amazon EC2 cluster or load balancer, triggers scale testing and sql dns change to sclsql.allcity.com
+fapws.app.mcnsf.com					#Reads
+fapws.sclapp.mcnsf.com				#Reads, points to Amazon EC2 cluster or load balancer, triggers scale testing and sql dns change to sclsql.allcity.com
+sql.mcnsf.com						#Default SQL
+sclsql.mcnsf.com					#Scale testing SQL cluster.
+
+#PRE-REQUISITES
+-Nginx 0.8.43
+-MySQL 5.X
+-Python 2.6
+-Tornado http://www.tornadoweb.org/
+-libev for FAPWS
+ -MAC: sudo port install libev
+ -YUM: sudo yum install libev
+-FAPWS http://www.fapws.org/
+-MySQLdb (python)
+-Grizzled (python)
+-Boto
+-Memcache
+-**See the pythonlibs folder for zips of libraries you can install**
+
+#NGINX
+-Use the conf/nginx_configure file as a template for building nginx
+-See the conf/nginx.conf file for a nginx conf template - you'll need to
+ change this to suit your environment (paths).
+
+#DATABASE
+-Install MySQL
+-Create a user (allcity / kdile8dkasdf8)
+-Only allow the allcity use to do select, insert, delete, update.
+-Create new table (allcity)
+-Run the provided db.sql file for structure and initial fixtures.
+
+#MEMCACHE
+-By default, the application reads the app/cache file. if it's content
+ is "on", the database layer tries to use memcache. If it's content is
+ "off", the database layer doesn't use cache.
+-You can toggle the state of memcache during runtime by hitting one of
+ these routes:
+ http://app.allcity.com/cache/on
+ http://app.allcity.com/cache/off
+
+#DEV TESTING
+-You'll need to setup the host entries above
+-You'll need mysql setup
+-You'll need nginx up and running with the provided configuration template
+-You'll need the application running from tornado. By default nginx
+ is configured to proxy requests over to one of four tornado instances.
+-Once all of that is setup, you can get it running with:
+ >>sudo nginx
+ >>./scripts/raise_tornado.sh
+-Hit http://app.allcity.com/test/ to double check that it's up and running.
+
+#MONIT
+-If you use monit, you can include the monit/allcity.monit config file.

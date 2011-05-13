@@ -1,0 +1,187 @@
+April 19th to Kurt's phone
+
+iPhone dev months: 2 months
+iPhone drawing dev months: 2 months
+QA - 2 weeks
+Apple submission months: 1.5 months
+Server total weeks: 1.5 weeks
+
+iPhone dev days: 40
+iPhone drawing dev days: 40
+Apple submission days: 30 days
+Server total days: 11 days
+
+-----------------------------------------------------------------------
+
+## QA AND SUBMISSIONS ##
+
+--qa--
+ -team effort
+
+--Apple submission--
+ =6 weeks best case
+
+
+## PAINTING FEATURES ##
+
+--generic painting features--
+ =5 weeks
+ *The orientation of the phone switches between finger paint / spray paint views.
+ -brush selection
+ -brush size selection
+ -clear canvas
+ -save
+ -color selection
+   -swatches
+ -stickers
+ -move, scale, rotate sections of the artwork (artwork will have to be maintained in layers)
+ -blend modes
+ -(optional) undo
+ -drawing settings
+  -drip
+ -drawing characteristics
+  -speed of swipes for thickness
+
+--accelerometer painting--
+ =3 weeks
+
+## VIEWS ##
+
+--login view--
+ *some type of login / change username for different phone
+
+--main menu view--
+ =1/2 Day
+ -create
+ -explore
+ -settings
+ -test views (dev only)
+
+--view "tester view"--
+ =1/2 day
+ *this is a view that has buttons to open up any view we wish for testing.
+  instead of having to go through all the user flows all the time.
+
+--settings view--
+ =2 days
+ *the settings view is a node to get to the real views (like profile). So we can add in
+  other settings when needed. Much like the settings screens in the iPhone OS.
+ -profile
+  *if you're not registered, you'll see a signup button that opens the registration view.
+
+--edit profile view--
+ =1/2 day
+ -username
+ -password
+ -avatar
+ -submit
+ -cancel
+
+--change password view--
+ =1/2 day
+ -(disabled) email
+ -(disabled) username
+ -new password
+ -new password confirmation
+
+--avatar selector / edit view--
+ =4 days
+ *used for initial registration
+ *used in "edit profile view"
+ -image from library
+ -edit tools (crop, rotate, etc)
+
+--explore view--
+ *if you have 3GS you'll see the augmented reality view.
+ *if you have 3G or earlier models you'll get the flat search list view.
+ *a search is done based off of your location with a 100 FT radius
+
+--finger paint view--
+ *includes a ui for "painting features"
+ *includes saving features
+
+--finger paint controls ui view--
+ =5 days
+
+--spray paint view--
+ *includes a ui for "painting features"
+ *includes saving features
+ *draw from accelerometer input
+
+--spray paint controls ui view--
+ =5 days
+
+--save view--
+ =2 days
+ *if you're not registered, you're prompted to register.
+ *if you don't want to register, just save everything locally
+ -title
+ -description
+ -tags
+ -meta data
+  -orientation
+  -geo
+ -submit
+  -uploads to server
+  -saves local
+ -cancel
+
+--registration view--
+ =1 day
+ *this could be either a modal view or normal view
+ -username
+ -password
+ -password confirmation
+ -email
+ -signup button
+ -cancel
+
+--sticker/stamp view--
+ =4 days
+ *this view could be a modal, or a list view
+ -select one and it throws it on the painting for you to move, size, rotate, etc.
+ -load a new sticker from photo library
+ -save new sticker from what's on the canvas
+
+--color selector view--
+ =4 Days
+ -color wheel
+ -swatch spaces
+
+--search input view--
+ =2 days
+ -username
+ -rating
+ -location (address or zip)
+ -tag
+
+--flat search results view--
+ =2 days
+ *item renderers inside of a table view
+ *clicking an item takes you to the "saved tag item view"
+ -item
+  -thumbnail
+  -title
+  -rating
+  -username (optional)
+
+--augmented reality search results view--
+ =5 days
+ *this is the default search results view if you're on a 3GS. But you can switch to the "flat search results view"
+ *each item in space is clickable, which takes to you the "saved tag item view"
+ -item
+  -thumbnail
+  -title
+  -rating
+  -username (optional)
+
+--saved item view--
+ =2 days
+ *used as the item view for either a flat search result item, or an item from augmented reality.
+ -image
+  -click the image goes fullscreen
+ -rating / submit your own rating
+  -you can only rate the image once.
+ -user that submitted the item
+
+

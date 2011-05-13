@@ -1,0 +1,18 @@
+-user
+ -created_at
+ -username
+ -email
+ -password
+ -avatar url
+ -rating (this may need some thought)
+ -tag_count (check memcache first || should be a cached value so a count isn't computed every time)
+
+-tags
+ -created_at
+ -user_id
+ -thumbnail url
+ -large url
+ -rating (this may need some thought)
+ -latitude
+ -longitude
+ -orientation

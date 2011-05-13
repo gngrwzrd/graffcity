@@ -1,0 +1,10 @@
+rm -rf app
+rm -rf conf
+rm -rf db
+rm -rf docs
+rm -rf lib
+rm -rf monit
+rm -rf pythonlibs
+rm -rf scripts
+rm -rf services
+rm -rf templates

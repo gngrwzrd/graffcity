@@ -1,0 +1,39 @@
+device requirements
+http://developer.apple.com/library/ios/#documentation/iphone/conceptual/iphoneosprogrammingguide/BuildTimeConfiguration/BuildTimeConfiguration.html
+
+
+Primary Category:  Entertainment
+Secondary Category: Social Networking
+Keywords: Graffiti, City, Art, Paint, Spraycan, Spray, Tag, Spraypaint, Augmented Reality, Painting, Drawing
+Contact Email: help@graffcityapp.com
+Support URL: graffcityapp.com
+App URL: graffcityapp.com
+
+
+GraffCity App Store
+COPY 11.19.10
+
+GRAFFCITY
+
+Graffcity turns your iPhone into a can of Krylon® and the entire world into your canvas.
+
+Virtually tag everything, anywhere, at any scale. Just hold your phone up and spray. Tag a wall, deface a friend’s car, or do an entire building. Nothing is off limits. Create unique artwork and 100% legit tags with the fully customizable spray modes like orange tip. Upload tags to your profile, Facebook, or your camera roll. Once uploaded, the augmented reality mode uses GPS to give you a real-time live street view of other people’s virtual tags. Explore, rate, and view other tagger’s creations. Graffcity gets you as close to the real thing without breaking the law (or mother nature).
+
+Features:
+
+Tag Creation
+-Two modes – spray can or finger paint.
+-Different brush options include tip, size, drip length, and a full spectrum of colors. 
+-Easy to use menu and undo options.
+-Crop, shrink, expand and rotate tags with backgrounds for perfect placement.
+-Special filter features allow you to edit tags with special effects like blend – which gives your tag added realism.
+-Save your tag as a sticker that can be reused as a signature.
+
+Publish
+-Save your tag to your camera roll, upload to your Graffcity profile, e-mail to a friend, or upload to your facebook profile.
+
+Explore
+-You can filter nearby tags by date, proximity, rating, or search user name or location.
+-AR (Augmented reality) view shows tags through your camera phone on street view.  
+
+

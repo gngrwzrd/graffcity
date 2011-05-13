@@ -1,0 +1,4 @@
+
+-fix the animation from view to view. it moves down and over. it should just move over.
+-figure out scroll views
+

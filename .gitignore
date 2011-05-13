@@ -1,0 +1,14 @@
+.DS_Store
+iphone/build/
+*.pbxuser
+*.perspective
+*.perspectivev3
+iphone/frameworks/openframeworks/libs/openFrameworksCompiled/project/iphone/build/**/*
+iphone/plain/ENV
+iphone/versioning/version
+iphone/source/rating/Samples/ScreenStuff/build/
+iphone/source/rating/build/
+test/
+services_deploy/
+services_deploy.zip
+assets/
